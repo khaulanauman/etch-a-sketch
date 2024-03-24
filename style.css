@@ -1,0 +1,20 @@
+*{
+    background-color: rgb(5, 5, 5);
+}
+.container {
+    margin: 0 auto; 
+}
+h1{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:rgba(255, 255, 255, 0.677);
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allows the items to wrap when they exceed container width */
+    max-width: 960px; /* Optionally, set a max-width for the container */
+    margin: 0 auto; /* Centers the container horizontally */
+}
