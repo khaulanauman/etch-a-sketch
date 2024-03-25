@@ -1,12 +1,13 @@
 *{
-    background-color: rgb(5, 5, 5);
+    background-color:black;
+    margin:5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .container {
     margin: 0 auto; 
 }
 h1{
     font-size: 40px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     color:rgba(255, 255, 255, 0.677);
     text-align: center;
 }
@@ -14,7 +15,21 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allows the items to wrap when they exceed container width */
-    max-width: 960px; /* Optionally, set a max-width for the container */
-    margin: 0 auto; /* Centers the container horizontally */
+    flex-wrap: wrap; 
+    max-width: 960px; 
+    margin: 0 auto; 
+}
+button{
+    width: 80px;
+    height: 40px;
+    background-color:white;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    flex:2px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
