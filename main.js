@@ -7,14 +7,16 @@ newBtn.addEventListener("click",newGrid);
 /*default grid*/
 window.onload=createGrid(16);
 function createGrid(size){
+    const boxWidth = Math.floor(550 / size);
     for(let i=1;i<=size;i++){
         const row = document.createElement("div");
         container.appendChild(row);
         for(let j=1;j<=size;j++){
             console.log("div no "+j+" of row "+i+" created")
             const box = document.createElement("div");
-            box.style.width="30px";
-            box.style.height="30px";
+            box.style.boxSizing = 'border-box';
+            box.style.width=boxWidth+"px";
+            box.style.height=boxWidth+"px";
             box.style.border="2px solid blue";
             box.classList.add("box");
             box.addEventListener("mouseover",()=>{
@@ -25,10 +27,11 @@ function createGrid(size){
     }
 }
 function resetGrid(){
-    const container = document.getElementsByClassName("container")[0];
-    while (container.firstChild) {
-    container.box.removeAttribute("style");
-    }
+    const row = document.querySelectorAll(".row");
+    row.forEach(box => {
+        box.style.background = "white";
+    });
+    console.log("cleard....")
 }
 function clearGrid(){
     const container = document.getElementsByClassName("container")[0];
