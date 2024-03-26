@@ -7,7 +7,9 @@ newBtn.addEventListener("click",newGrid);
 /*default grid*/
 window.onload=createGrid(16);
 function createGrid(size){
-    const boxWidth = Math.floor(550 / size);
+    /*dynamic size*/
+    const containerWidth=container.clientWidth;
+    const boxWidth = Math.floor(containerWidth / size);
     for(let i=1;i<=size;i++){
         const row = document.createElement("div");
         container.appendChild(row);
@@ -26,13 +28,14 @@ function createGrid(size){
         }
     }
 }
+/*clear styling in box*/
 function resetGrid(){
-    const row = document.querySelectorAll(".row");
-    row.forEach(box => {
-        box.style.background = "white";
+    const boxes = container.querySelectorAll(".box");
+    boxes.forEach(box => {
+      box.style.background = "black";
     });
-    console.log("cleard....")
 }
+/*remove previous gtid before creating new one*/
 function clearGrid(){
     const container = document.getElementsByClassName("container")[0];
     while (container.firstChild) {
@@ -44,13 +47,16 @@ function newGrid(){
     /*making sure size is less than 100*/
     while(true){
         size= window.prompt("Enter the no. of boxes per row");
-        if(size<=100){
+        if(size==null){
+            break;
+        }
+        if(size>0&&size<=100){
+            clearGrid();
+            createGrid(size);
             break;
         }
         else{
-            alert("Please enter a number below 100");
+            alert("Please enter a number above 0 and below 100");
         }
-    }
-    clearGrid();
-    createGrid(size);
+    } 
 }
