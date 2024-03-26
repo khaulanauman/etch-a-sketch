@@ -1,10 +1,7 @@
 *{
     background-color:black;
-    margin:5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-}
-.container {
-    margin: 0 auto; 
+    box-sizing: border-box;
 }
 h1{
     font-size: 40px;
@@ -14,10 +11,10 @@ h1{
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; 
-    max-width: 960px; 
+    max-width: 550px;
+    height: 550px;
     margin: 0 auto; 
+    
 }
 button{
     width: 80px;
